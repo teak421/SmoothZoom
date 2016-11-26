@@ -1,4 +1,4 @@
-// Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
+// 837 Studios - 2016 
 
 #include "SmoothZoom.h"
 #include "Engine.h"

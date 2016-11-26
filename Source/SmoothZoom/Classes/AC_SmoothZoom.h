@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// 837 Studios - 2016 
 
 #pragma once
 
@@ -22,7 +22,7 @@ public:
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
 	UFUNCTION(BlueprintCallable, Category = "Camera|Zoom")
-	void SetNewSpringArmComponent(USpringArmComponent* NewSpringArm);
+	void SetSpringArmComponent(USpringArmComponent* AssignedSpringArm);
 	
 	/* TargetArmLength Units that will be subtracted or added*/
 	UFUNCTION(BlueprintCallable, Category = "Camera|Zoom")
@@ -39,6 +39,10 @@ public:
 	/*How smooth the zoom will be (Higher less smooth, lower more smooth*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Zoom")
 	float ZoomSmoothness;
+
+	/* Current Version Number */
+	UPROPERTY(VisibleDefaultsOnly, Category = "Camera Zoom")
+	float CurrentVersion;
 
 	/* Check this box if you would like to see debug information */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Zoom")

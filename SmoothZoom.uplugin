@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "0.9",
+	"VersionName": "0.92",
 	"FriendlyName": "Smooth Zoom Actor Component",
 	"Description": "Easy Zooming Feature inside of Blueprint",
 	"Category": "Camera",
@@ -12,12 +12,12 @@
 	"SupportURL": "",
 	"CanContainContent": false,
 	"IsBetaVersion": true,
-	"Installed": false,
+	"Installed": true,
 	"Modules": [
 		{
 			"Name": "SmoothZoom",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "PreDefault"
 		}
 	]
 }
