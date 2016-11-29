@@ -1,4 +1,4 @@
-// 837 Studios - 2016 
+// 837 Studios - MIT License - Michael Gaskin 2016
 
 #include "SmoothZoom.h"
 #include "Engine.h"
