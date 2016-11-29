@@ -9,8 +9,7 @@ public class SmoothZoom : ModuleRules
 		
 		PublicIncludePaths.AddRange(
 			new string[] {
-				"SmoothZoom/Public",
-                "SmoothZoom/Classes"
+				"SmoothZoom/Public"
 				// ... add public include paths required here ...
 			}
 			);

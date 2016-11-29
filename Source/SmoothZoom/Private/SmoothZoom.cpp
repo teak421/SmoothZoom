@@ -1,4 +1,4 @@
-// Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
+// 837 Studios - MIT License - Michael Gaskin 2016
 
 #include "SmoothZoomPrivatePCH.h"
 
@@ -7,7 +7,7 @@
 void FSmoothZoomModule::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
-	UE_LOG(LogTemp, Warning, TEXT("SmoothZoom Module Loaded"))
+	UE_LOG(LogTemp, Warning, TEXT("Smooth Zoom Plugin Enabled."))
 }
 
 void FSmoothZoomModule::ShutdownModule()

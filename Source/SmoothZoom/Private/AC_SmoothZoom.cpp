@@ -1,7 +1,10 @@
-// 837 Studios - 2016 
+// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "SmoothZoomPrivatePCH.h"
-#include "Classes/AC_SmoothZoom.h"
+#include "SmoothZoom.h"
+#include "AC_SmoothZoom.h"
+
+DEFINE_LOG_CATEGORY(ZoomLog);
 
 // Sets default values for this component's properties
 UAC_SmoothZoom::UAC_SmoothZoom()
@@ -9,25 +12,26 @@ UAC_SmoothZoom::UAC_SmoothZoom()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-	CurrentVersion = 0.92f;
+	CurrentVersion = 1.00f;
 }
 
 // Called when the game starts
-void UAC_SmoothZoom::BeginPlay() { 	Super::BeginPlay(); }
+void UAC_SmoothZoom::BeginPlay() { Super::BeginPlay(); }
 
 // Called every frame
 void UAC_SmoothZoom::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+	if (DesiredArmLength >= MinTargetLength && DesiredArmLength <= MaxTargetLength)
 	{
-		Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-		if (DesiredArmLength >= MinTargetLength && DesiredArmLength <= MaxTargetLength)
-		{
-			SpringArm->TargetArmLength = FMath::FInterpTo(SpringArm->TargetArmLength, DesiredArmLength, DeltaTime, ZoomSmoothness);
-		}
+		SpringArm->TargetArmLength = FMath::FInterpTo(SpringArm->TargetArmLength, DesiredArmLength, DeltaTime, ZoomSmoothness);
 	}
 }
+
+// Assigns the SpringArm component
 void UAC_SmoothZoom::SetSpringArmComponent(USpringArmComponent* AssignedSpringArm) { SpringArm = AssignedSpringArm; }
 
+// Sets the DesiredArmLength and displays log if bDebug is true
 void UAC_SmoothZoom::SmoothCameraZoom(float ZoomUnits)
 {
 	if (SpringArm)
@@ -38,7 +42,7 @@ void UAC_SmoothZoom::SmoothCameraZoom(float ZoomUnits)
 	}
 	if (bDebug)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Min: %f Max: %f Desired: %f Actual: %f ZoomUnits: %f"),
+		UE_LOG(ZoomLog, Warning, TEXT("Min: %f Max: %f Desired: %f Actual: %f ZoomUnits: %f"),
 			MinTargetLength, MaxTargetLength, DesiredArmLength, SpringArm->TargetArmLength, ZoomUnits)
 	}
 }
