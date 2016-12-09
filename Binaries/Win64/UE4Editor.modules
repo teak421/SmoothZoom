@@ -1,9 +1,0 @@
-{
-	"Changelist" : 3195953,
-	"CompatibleChangelist" : 0,
-	"BuildId" : "",
-	"Modules" : 
-	{
-		"SmoothZoom" : "UE4Editor-SmoothZoom.dll"
-	}
-}
