@@ -37,14 +37,11 @@ void UAC_SmoothZoom::SmoothCameraZoom(bool bZoomOut)
 {
 	DesiredArmLength = bZoomOut ? SpringArm->TargetArmLength + ZoomUnits
 		: SpringArm->TargetArmLength + (ZoomUnits * -1);
-	if (DesiredArmLength > MaxTargetLength) { DesiredArmLength = MaxTargetLength; }
-	if (DesiredArmLength < MinTargetLength) { DesiredArmLength = MinTargetLength; }
-	/* Another way to check Max and Min
 	if( DesiredArmLength > MaxTargetLength || DesiredArmLength < MinTargetLength )
 	{
 		DesiredArmLength = FMath::Min<float>( FMath::Max<float>( DesiredArmLength, MinTargetLength ), MaxTargetLength );
 	}
-	*/
+	
 	if (bDebug) { SmoothZoomLog(); }
 }
 
