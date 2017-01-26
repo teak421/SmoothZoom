@@ -9,7 +9,7 @@ DEFINE_LOG_CATEGORY(ZoomLog);
 UAC_SmoothZoom::UAC_SmoothZoom()
 {
 	PrimaryComponentTick.bCanEverTick = true;
-	CurrentVersion = 1.1f;
+	CurrentVersion = 1.2f;
 }
 
 void UAC_SmoothZoom::BeginPlay() { 	Super::BeginPlay(); }
