@@ -3,7 +3,7 @@
 	"Version": 1,
 	"VersionName": "1.2",
 	"FriendlyName": "Smooth Camera Zoom",
-	"Description": "Easy to use Smooth Camera Zoom Actor Component (4.14)",
+	"Description": "Easy to use Smooth Camera Zoom Actor Component (4.14+)",
 	"Category": "Camera",
 	"CreatedBy": "Michael Gaskin (teak421)",
 	"CreatedByURL": "https://github.com/teak421/",
