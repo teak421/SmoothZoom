@@ -17,7 +17,12 @@ void UAC_SmoothZoom::BeginPlay() { 	Super::BeginPlay(); }
 void UAC_SmoothZoom::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	// Only call when need to, saves ms's 
+	if( SpringArm->TargetArmLength != DesiredArmLength )
+	{
 		SpringArm->TargetArmLength = FMath::FInterpTo(SpringArm->TargetArmLength, DesiredArmLength, DeltaTime, ZoomSmoothness);
+	}
 }
 
 // Assigns the SpringArm component
@@ -30,10 +35,16 @@ void UAC_SmoothZoom::SetSpringArmComponent(USpringArmComponent* AssignedSpringAr
 // Sets the DesiredArmLength
 void UAC_SmoothZoom::SmoothCameraZoom(bool bZoomOut)
 {
-	DesiredArmLength = (bZoomOut) ? DesiredArmLength = SpringArm->TargetArmLength + ZoomUnits
-		: DesiredArmLength = (ZoomUnits * -1) + SpringArm->TargetArmLength;
+	DesiredArmLength = bZoomOut ? SpringArm->TargetArmLength + ZoomUnits
+		: SpringArm->TargetArmLength + (ZoomUnits * -1);
 	if (DesiredArmLength > MaxTargetLength) { DesiredArmLength = MaxTargetLength; }
 	if (DesiredArmLength < MinTargetLength) { DesiredArmLength = MinTargetLength; }
+	/* Another way to check Max and Min
+	if( DesiredArmLength > MaxTargetLength || DesiredArmLength < MinTargetLength )
+	{
+		DesiredArmLength = FMath::Min<float>( FMath::Max<float>( DesiredArmLength, MinTargetLength ), MaxTargetLength );
+	}
+	*/
 	if (bDebug) { SmoothZoomLog(); }
 }
 
