@@ -6,25 +6,26 @@
 #include "InputCoreTypes.h"
 #include "AC_SmoothZoom.generated.h"
 
+
 DECLARE_LOG_CATEGORY_EXTERN(ZoomLog, Log, All);
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent, Tooltip = "Smooth Zoom Actor Component") )
+UCLASS( ClassGroup=(Camera), meta=(BlueprintSpawnableComponent) )
 class SMOOTHZOOM_API UAC_SmoothZoom : public UActorComponent
 {
 	GENERATED_BODY()
-	
+
 public:	
 	// Sets default values for this component's properties
 	UAC_SmoothZoom();
 
 	// Called when the game starts
 	virtual void BeginPlay() override;
-
+	
 	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
 	UFUNCTION(BlueprintCallable, Category = "Camera|Zoom")
-	void SetSpringArmComponent(USpringArmComponent* AssignedSpringArm);
+	void SetSpringArmComponent(UPARAM(ref)USpringArmComponent* AssignedSpringArm);
 
 	/* TargetArmLength Units that will be subtracted or added*/
 	UFUNCTION(BlueprintCallable, Category = "Camera|Zoom")
@@ -46,6 +47,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Zoom")
 	float ZoomSmoothness;
 
+	/* If checked, will display debug information in the log window*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Zoom")
 	bool bDebug;
 
@@ -57,5 +59,6 @@ private:
 
 	void SmoothZoomLog();
 	float DesiredArmLength;
-	USpringArmComponent* SpringArm;
+	USpringArmComponent* SpringArm;		
+	
 };

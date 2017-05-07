@@ -1,23 +1,23 @@
 {
-	"FileVersion": 3,
-	"Version": 1,
-	"VersionName": "1.2",
-	"FriendlyName": "Smooth Camera Zoom",
-	"Description": "Easy to use Smooth Camera Zoom Actor Component (4.14+)",
-	"Category": "Camera",
-	"CreatedBy": "Michael Gaskin (teak421)",
-	"CreatedByURL": "https://github.com/teak421/",
-	"DocsURL": "https://github.com/teak421/SmoothZoom/wiki",
-	"MarketplaceURL": "",
-	"SupportURL": "https://forums.unrealengine.com/showthread.php?129845-Smooth-Zoom-Actor-Component-Plugin",
-	"CanContainContent": false,
-	"IsBetaVersion": false,
-	"Installed": false,
-	"Modules": [
-		{
-			"Name": "SmoothZoom",
-			"Type": "Runtime",
-			"LoadingPhase": "PreDefault"
-		}
-	]
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.3",
+  "FriendlyName": "Smooth Camera Zoom",
+  "Description": "Easy to use Smooth Camera Zoom Actor Component (4.14+)",
+  "Category": "Camera",
+  "CreatedBy": "Michael Gaskin (teak421)",
+  "CreatedByURL": "https://github.com/teak421/",
+  "DocsURL": "https://github.com/teak421/SmoothZoom/wiki",
+  "MarketplaceURL": "",
+  "SupportURL": "https://forums.unrealengine.com/showthread.php?129845-Smooth-Zoom-Actor-Component-Plugin",
+  "CanContainContent": false,
+  "IsBetaVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "SmoothZoom",
+      "Type": "Runtime",
+      "LoadingPhase": "PreDefault"
+    }
+  ]
 }
