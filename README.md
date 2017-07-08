@@ -1,5 +1,5 @@
 # SmoothZoom
-Smooth Zoom Plugin for Unreal Engine 4.14+
+Smooth Zoom Plugin for Unreal Engine 4.16+
 
 This plugin provides two additional Blueprint nodes, called SmoothCameraZoom and SetNewSpringArmComponent.  
 
