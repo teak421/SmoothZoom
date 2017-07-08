@@ -4,7 +4,7 @@ using UnrealBuildTool;
 
 public class SmoothZoom : ModuleRules
 {
-	public SmoothZoom(TargetInfo Target)
+	public SmoothZoom(ReadOnlyTargetRules Target) : base (Target)
 	{
 		
 		PublicIncludePaths.AddRange(
