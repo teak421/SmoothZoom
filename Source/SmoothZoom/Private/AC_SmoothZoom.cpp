@@ -24,7 +24,7 @@ void UAC_SmoothZoom::TickComponent( float DeltaTime, ELevelTick TickType, FActor
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// Only call when need to, saves ms's 
-	if (SpringArm->TargetArmLength != DesiredArmLength)
+	if (!FMath::IsNearlyEqual(SpringArm->TargetArmLength, DesiredArmLength, 1.0f))
 	{
 		SpringArm->TargetArmLength = FMath::FInterpTo(SpringArm->TargetArmLength, DesiredArmLength, DeltaTime, ZoomSmoothness);
 	}
