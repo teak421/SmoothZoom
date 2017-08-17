@@ -10,7 +10,7 @@ UAC_SmoothZoom::UAC_SmoothZoom()
 {
 	PrimaryComponentTick.bCanEverTick = true;
 	// Default Values
-	CurrentVersion = 1.3f;
+	CurrentVersion = 1.32f;
 	MinTargetLength = 150.0f;
 	MaxTargetLength = 1500.0f;
 	ZoomUnits = 125.0f;
@@ -24,7 +24,7 @@ void UAC_SmoothZoom::TickComponent( float DeltaTime, ELevelTick TickType, FActor
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// Only call when need to, saves ms's 
-	if (!FMath::IsNearlyEqual(SpringArm->TargetArmLength, DesiredArmLength, 1.0f))
+	if (!FMath::IsNearlyEqual(SpringArm->TargetArmLength, DesiredArmLength, 0.5f))
 	{
 		SpringArm->TargetArmLength = FMath::FInterpTo(SpringArm->TargetArmLength, DesiredArmLength, DeltaTime, ZoomSmoothness);
 	}
