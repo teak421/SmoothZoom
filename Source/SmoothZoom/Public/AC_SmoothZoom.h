@@ -8,7 +8,7 @@
 
 DECLARE_LOG_CATEGORY_EXTERN(ZoomLog, Log, All);
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS( ClassGroup=(Camera), meta=(BlueprintSpawnableComponent) )
 class SMOOTHZOOM_API UAC_SmoothZoom : public UActorComponent
 {
 	GENERATED_BODY()
