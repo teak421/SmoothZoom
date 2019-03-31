@@ -10,7 +10,7 @@ DEFINE_LOG_CATEGORY(ZoomLog);
 UAC_SmoothZoom::UAC_SmoothZoom()
 {
 	PrimaryComponentTick.bCanEverTick = true;
-	CurrentVersion = 1.40f;
+	CurrentVersion = 1.50f;
 	const auto &SZSettings = GetMutableDefault<USmoothZoomDeveloperSettings>();
 	if (SZSettings) {
 		MinTargetLength = SZSettings->MinTargetLength;
@@ -26,7 +26,8 @@ void UAC_SmoothZoom::BeginPlay() { Super::BeginPlay(); }
 
 void UAC_SmoothZoom::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
+	if (!ensure(SpringArm)) { return; };
+	
 	// Only call when need to, saves MS's 
 	if (!FMath::IsNearlyEqual(SpringArm->TargetArmLength, DesiredArmLength, 0.5f)) {
 		SpringArm->TargetArmLength = FMath::FInterpTo(SpringArm->TargetArmLength, DesiredArmLength, DeltaTime, ZoomSmoothness);
