@@ -4,18 +4,20 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "AC_SmoothZoom.generated.h"
+#include "SmoothZoomComponent.generated.h"
+
+class USpringArmComponent;
 
 DECLARE_LOG_CATEGORY_EXTERN(ZoomLog, Log, All);
 
 UCLASS( ClassGroup=(Camera), meta=(BlueprintSpawnableComponent) )
-class SMOOTHZOOM_API UAC_SmoothZoom : public UActorComponent
+class SMOOTHZOOM_API USmoothZoomComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UAC_SmoothZoom();
+	USmoothZoomComponent();
 
 protected:
 	// Called when the game starts
@@ -61,5 +63,5 @@ private:
 	void SmoothZoomLog();
 	float DesiredArmLength;
 	class USpringArmComponent* SpringArm;
-	
+		
 };

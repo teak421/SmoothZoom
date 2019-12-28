@@ -1,4 +1,4 @@
-// Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
+// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 
 using UnrealBuildTool;
 
@@ -10,7 +10,6 @@ public class SmoothZoom : ModuleRules
 		
 		PublicIncludePaths.AddRange(
 			new string[] {
-				"SmoothZoom/Public"
 				// ... add public include paths required here ...
 			}
 			);
@@ -18,7 +17,6 @@ public class SmoothZoom : ModuleRules
 		
 		PrivateIncludePaths.AddRange(
 			new string[] {
-				"SmoothZoom/Private",
 				// ... add other private include paths required here ...
 			}
 			);
