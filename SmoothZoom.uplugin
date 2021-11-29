@@ -10,7 +10,7 @@
 	"DocsURL": "https://github.com/teak421/SmoothZoom/wiki",
 	"MarketplaceURL": "",
 	"SupportURL": "https://forums.unrealengine.com/showthread.php?129845-Smooth-Zoom-Actor-Component-Plugin",
-	"EngineVersion": "4.26.0",
+	"EngineVersion": "4.27.0",
 	"CanContainContent": false,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
